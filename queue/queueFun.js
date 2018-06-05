@@ -1,8 +1,5 @@
-var io = require('../io/lamp')
-
-const fun = function() {
-
-}
+// var io = require('../io/lamp');
+var shell = require('shelljs');
 
 module.exports.pushQueue = function(queue, data) {
   try {
@@ -29,7 +26,8 @@ module.exports.readQueue = function(queue) {
     try {
       var array = data.toString().split('_');
       if (array.length = 6){
-        io.lamp(array[5])
+        // io.lamp(array[5])
+        shell.exec('./lamp ${array[5]}');
       }
     } catch (e) {
       console.log('no no no no');
