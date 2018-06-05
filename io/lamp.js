@@ -2,6 +2,7 @@ const Gpio = require('orange-pi-gpio')
 
 
 module.exports.lamp = function(value) {
+  "use strict";
   let gpio = new Gpio({pin: 31, mode: 'out'})
   try {
     gpio.write(value)
