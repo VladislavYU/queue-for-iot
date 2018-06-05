@@ -1,4 +1,8 @@
-let io = require('./io/lamp')
+var io = require('../io/lamp')
+
+const fun = function() {
+
+}
 
 module.exports.pushQueue = function(queue, data) {
   try {
