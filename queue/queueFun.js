@@ -21,13 +21,14 @@ module.exports.pushQueue = function(queue, data) {
   }
 }
 
-module.exports.readQueue = function(queue) {
+module.exports.readQueue = function(queue, funct) {
   queue.on('data', (data) => {
     try {
       var array = data.toString().split('_');
       if (array.length = 6){
         // io.lamp(array[5])
-        shell.exec('./lamp ${array[5]}');
+        // shell.exec('./lampo.sh ${array[5]}');
+        funct(array);
       }
     } catch (e) {
       console.log('no no no no');
